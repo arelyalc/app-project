@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+}
+
+.mat-column-right {
+    text-align: center;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+img {
+    width: 10%;
+}
+
+.second {
+    color: purple;
+}
+
+.third {
+    color: goldenrod;
+}
+
+.last {
+    color: darkcyan;
+}
