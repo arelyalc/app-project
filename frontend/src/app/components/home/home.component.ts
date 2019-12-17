@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
 
-import { Issue } from '../../issue.model';
-import { IssueService } from '../../issue.service';
+import { UserService } from 'src/app/users.service';
+import { User } from 'src/app/user.model';
 
 @Component({
   selector: 'app-home',
@@ -12,33 +11,20 @@ import { IssueService } from '../../issue.service';
 })
 export class HomeComponent implements OnInit {
 
-  issues: Issue[];
-  displayedColumns = ['title', 'responsible', 'severity', 'status', 'actions'];
-
-  constructor(private issueService: IssueService, private router: Router) { }
+  users: User[];
+  
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-    this.fetchIssues();
+    this.fetchUsers();
   }
 
-  fetchIssues() {
-    this.issueService
-      .getIssues()
-      .subscribe((data: Issue[]) => {
-        this.issues = data;
-        console.log('Data requested ...');
-        console.log(this.issues);
+  fetchUsers() {
+    this.userService
+      .getUsers()
+      .subscribe((data: User[]) => {
+        this.users = data;
       });
-  }
-
-  editIssue(id) {
-    this.router.navigate([`/edit/${id}`]);
-  }
-
-  deleteIssue(id) {
-    this.issueService.deleteIssue(id).subscribe(() => {
-      this.fetchIssues();
-    });
   }
 
 }

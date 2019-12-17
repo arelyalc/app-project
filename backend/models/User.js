@@ -14,6 +14,9 @@ let User = new Schema({
     },
     password: {
         type: String
+    },
+    id: {
+        type: String
     }
 });
 

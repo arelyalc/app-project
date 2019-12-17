@@ -1,3 +1,80 @@
-<p>
-  dashboard works!
-</p>
+<mat-tab-group>
+  <mat-tab label="My Questions">
+    <mat-card>
+      <section class="mat-typography">
+        <h2>You can create your own questions here!</h2>
+      </section>
+      <mat-divider></mat-divider>
+      <br>
+      <form [formGroup]="createForm2" class="create-form">
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder='type your question here' formControlName="question" #question>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder='type the answer to the question' formControlName="answer" #answer>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <br><br>
+        <button type="submit" (click)="addQuestion(question.value, answer.value)" [disabled]="createForm2.pristine || createForm2.invalid" mat-raised-button color="primary">Save</button>
+      </form>
+    </mat-card>
+    <br><br>
+    <h2 style="padding-left: 1em;">My questions:</h2>
+    <mat-accordion >
+      <mat-expansion-panel *ngFor="let q of questions">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{q.question}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr>
+            {{q.answer}}
+      </mat-expansion-panel>
+    </mat-accordion>
+    </mat-tab>
+
+
+  <mat-tab label="Review"> 
+    <h2 style="padding-left: 1em;">Random questions:</h2>
+    <mat-accordion >
+      <mat-expansion-panel *ngFor="let q of allQ">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{q.question}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <hr>
+            {{q.answer}}
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-tab>
+
+
+
+  <mat-tab label="Account"> 
+    <mat-card>
+      <section class="mat-typography">
+        <h2>Profile Information</h2>
+      </section>
+      <mat-divider></mat-divider>
+      <br>
+      <form *ngIf="currentUser!== undefined" [formGroup]="createForm" class="create-form">
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder={{this.currentUser.name}} formControlName="name" #name readonly>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder={{currentUser.email}} formControlName="email" #email readonly>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input matInput placeholder={{currentUser.username}} formControlName="username" #username readonly>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <br><br>
+        <!-- <button type="submit" (click)="updateUser(name.value, email.value, username.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button> -->
+      </form>
+      <div align="center">
+        <img class="profile" src="assets/profile.png">
+      </div>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>

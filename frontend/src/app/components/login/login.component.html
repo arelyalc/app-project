@@ -1,0 +1,26 @@
+<div>
+  <br>
+  <mat-card>
+    <section class="mat-typography">
+      <h2>Log into your account</h2>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="createForm" class="create-form">
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Username" formControlName="username" #username>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput type="password" placeholder="Password" formControlName="password" #password>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <br><br>
+      <button mat-raised-button color="accent" routerLink="/home">Back</button>&nbsp;
+      <button type="submit" (click)="validate(username.value, password.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
+    </form>
+  </mat-card>
+  <br>
+  <div align="center">
+    <img src="assets/login.png" style="width: 7em;">
+  </div>
+</div>

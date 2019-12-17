@@ -1,0 +1,17 @@
+.create-form {
+    min-width: 150px;
+    width: 100%;
+}
+
+.field-full-width {
+    width: 100%;
+}
+
+mat-expansion-panel {
+    background-color: rgb(183, 222, 238);
+    border: 0.05em solid black;
+}
+
+.profile {
+    width: 10em;
+}

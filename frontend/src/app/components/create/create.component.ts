@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; 
-import { UserService } from '../../user.service';
+import { UserService } from '../../users.service';
 
 @Component({
   selector: 'app-create',
@@ -22,9 +22,12 @@ export class CreateComponent implements OnInit {
   }
 
   addUser(name, email, username, password) {
-    this.userService.addUser(name, email, username, password).subscribe(() => {
-      this.router.navigate(['/dashboard']);
+    var user = {name: name, email: email, username: username, password: password};
+    this.userService.add(user).subscribe(() => {
     });
+    this.userService.getUserByUsername(username).subscribe((u) => {
+      this.router.navigate(['/dashboard/' + u[0].id]);
+    })
   }
 
   ngOnInit() {

@@ -14,6 +14,10 @@ export class UserService {
     return this.http.get(`${this.uri}/users`);
   }
 
+  getQuestions() {
+    return this.http.get(`${this.uri}/questions`);
+  }
+
   getUserById(id) {
     return this.http.get(`${this.uri}/users/${id}`);
   }
@@ -26,6 +30,16 @@ export class UserService {
       password: password
     };
     return this.http.post(`${this.uri}/users/add`, user);
+  }
+
+  addQuestion(question, c1, c2, c3) {
+    const ques = {
+      question: question,
+      choice1: c1,
+      choice2: c2,
+      choice: c3
+    };
+    return this.http.post(`${this.uri}/users/add`, ques);
   }
 
   updateUser(id, name, email, username, password) {

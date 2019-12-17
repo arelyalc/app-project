@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "name": "Arely Alcantara",
+      "email": "aalcantara@smu.edu",
+      "username": "arelyalc",
+      "password": "password",
+      "id": 1
+    },
+    {
+      "name": "ppp",
+      "email": "p",
+      "username": "pp",
+      "password": "pp",
+      "id": 2
+    },
+    {
+      "name": "ooo",
+      "email": "ooo",
+      "username": "ooo",
+      "password": "ooo",
+      "id": 3
+    },
+    {
+      "name": "testing",
+      "email": "testing@smu.edu",
+      "username": "toocoolforschool",
+      "password": "lol",
+      "id": 4
+    }
+  ],
+  "questions": [
+    {
+      "question": "What Is An Object In C++?",
+      "answer": "An object is a package that contains related data and instructions. The data relates to what the object represents, while the instructions define how this object relates to other objects and itself.",
+      "user_id": -1000,
+      "id": 1
+    },
+    {
+      "question": "What is so important about OOP?",
+      "answer": "The basic OOPS principle are as follows: Encapsulation, Abstraction, Inheritance, Polymorphism",
+      "user_id": -1000,
+      "id": 2
+    },
+    {
+      "question": "What is polymorphism?",
+      "answer": "Polymorphism is the ability of an object to take on multiple forms. Most commonly polymorphism is used in OOP when a parent class reference is used to refer to a child class object.",
+      "user_id": -1000,
+      "id": 3
+    },
+    {
+      "question": "What does API stand for?",
+      "answer": "Application Programming Interface",
+      "user_id": -1000,
+      "id": 4
+    },
+    {
+      "question": "what is bubble sort",
+      "answer": "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.",
+      "user_id": 4,
+      "id": 5
+    },
+    {
+      "question": "what is quick sort?",
+      "answer": "Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.",
+      "user_id": 4,
+      "id": 6
+    },
+    {
+      "question": "what is selection sort?",
+      "answer": "Sort the following array using the selection sort algorithm. In computer science, selection sort is a sorting algorithm, specifically an in-place comparison sort. It has O(n2) time complexity, making it inefficient on large lists, and generally performs worse than the similar insertion sort.",
+      "user_id": 4,
+      "id": 7
+    },
+    {
+      "question": "what is merge sort??",
+      "answer": "Merge sort is a perfect example of a Divide and Conquer algorithm. It simply uses the 2 main steps of such an algorithm",
+      "user_id": 4,
+      "id": 8
+    }
+  ]
+}
