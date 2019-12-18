@@ -60,6 +60,7 @@ export class DashboardComponent implements OnInit {
     console.log(q);
     this.questionService.add(q).subscribe(() => {
       let snackBarRef = this._snackBar.open('your question was added!');
+      location.reload();
     });
   }
 

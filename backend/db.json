@@ -27,6 +27,13 @@
       "username": "toocoolforschool",
       "password": "lol",
       "id": 4
+    },
+    {
+      "name": "samantha",
+      "email": "s@smu.edu",
+      "username": "sglasford",
+      "password": "password",
+      "id": 5
     }
   ],
   "questions": [
@@ -77,6 +84,12 @@
       "answer": "Merge sort is a perfect example of a Divide and Conquer algorithm. It simply uses the 2 main steps of such an algorithm",
       "user_id": 4,
       "id": 8
+    },
+    {
+      "question": "What is a linked list?",
+      "answer": "A linked list is a sequence of nodes in which each node is connected to the node following it. This forms a chain-like link for data storage.",
+      "user_id": 3,
+      "id": 9
     }
   ]
 }

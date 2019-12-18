@@ -38,9 +38,9 @@ export class QuestionService {
     .pipe(catchError(this.handleException));
   }
 
-  getQuestionById(userId: number): Observable<Question> {
+  getQuestionById(userId: number): Observable<Question[]> {
     return this.httpClient
-    .get<Question>(`${this.endPoint}?user_id=${userId}`, this.httpOptions)
+    .get<Question[]>(`${this.endPoint}?user_id=${userId}`, this.httpOptions)
     .pipe(catchError(this.handleException));
   }
 

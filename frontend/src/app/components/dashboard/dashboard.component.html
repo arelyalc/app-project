@@ -19,18 +19,20 @@
       </form>
     </mat-card>
     <br><br>
-    <h2 style="padding-left: 1em;">My questions:</h2>
-    <mat-accordion >
-      <mat-expansion-panel *ngFor="let q of questions">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{q.question}}
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <hr>
-            {{q.answer}}
-      </mat-expansion-panel>
-    </mat-accordion>
+    <div *ngIf="questions.length > 0">
+      <h2 style="padding-left: 1em;">My questions:</h2>
+      <mat-accordion >
+        <mat-expansion-panel *ngFor="let q of questions">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{q.question}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <hr>
+              {{q.answer}}
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
     </mat-tab>
 
 
